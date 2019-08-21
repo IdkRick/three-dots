@@ -1,0 +1,300 @@
+*,
+*::before,
+*::after {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body {
+   font-family: "Poppins", sans-serif;
+   font-weight: 300;
+}
+
+/* Index Page */
+.portfolio {
+   color: rgb(235, 235, 235);
+   background: radial-gradient(#2b3760, #0b1023);
+}
+
+nav {
+   min-height: 10vh;
+   width: 90%;
+   margin: auto;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 20px 0;
+}
+
+.logo {
+   font-size: 1.25rem;
+}
+
+.page {
+   min-height: 90vh;
+   display: grid;
+   grid-template-columns: 5% 1fr 1fr 1fr 5%;
+   overflow: hidden;
+}
+
+.chef,
+.barber {
+   position: absolute;
+   top: 10vh;
+   min-height: 90vh;
+   width: 100%;
+   opacity: 0;
+   pointer-events: none;
+}
+.hero {
+   overflow: hidden;
+   height: 500px;
+   justify-self: center;
+   align-self: center;
+   display: flex;
+}
+
+.hero a {
+   display: flex;
+}
+
+.hero img {
+   height: 500px;
+   transition: transform 0.3s ease-out;
+   cursor: pointer;
+}
+
+.profile-right {
+   transform: translate(0%, 10%);
+}
+.profile-left {
+   transform: translate(0%, -10%);
+}
+
+.hero:hover .profile-right {
+   transform: translate(0%, 0%);
+}
+.hero:hover .profile-left {
+   transform: translate(0%, 0%);
+}
+
+.details {
+   grid-column: 2/3;
+   align-self: end;
+}
+
+.details h1 {
+   font-size: 4rem;
+   font-weight: 400;
+}
+.details h2 {
+   font-size: 2.625rem;
+   padding: 20px 0;
+   font-weight: 400;
+}
+.details p {
+   font-size: 1.5rem;
+   padding: 20px 0 50px 0;
+}
+
+.pages {
+   position: absolute;
+   right: 5%;
+   top: 50%;
+   transform: translateY(-50%);
+}
+
+.pages > div {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+
+.pages h3 {
+   font-size: 1.5rem;
+   padding: 30px;
+}
+
+.pages svg {
+   cursor: pointer;
+   opacity: 0.5;
+   transform: scale(2);
+   transition: 0.2s ease;
+}
+.pages svg:hover {
+   transform: scale(3);
+}
+
+.pages svg.active {
+   opacity: 1;
+   pointer-events: none;
+}
+
+/* Description Page */
+.banner {
+   height: 50vh;
+   width: 100%;
+   position: relative;
+}
+
+.banner img {
+   height: 100%;
+   width: 100%;
+   object-fit: cover;
+   object-position: center;
+}
+
+.author {
+   position: absolute;
+   top: 80%;
+   left: 50%;
+   transform: translate(-50%, -70%);
+   text-align: center;
+   color: white;
+   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+.author h1 {
+   font-size: 2.625rem;
+}
+.author h3 {
+   font-size: 2rem;
+   padding: 20px 0;
+}
+
+.story,
+.my-work {
+   display: flex;
+   justify-content: space-between;
+   width: 90%;
+   margin: auto;
+   padding: 80px 0;
+}
+
+.story-description,
+.work-description {
+   width: 50%;
+}
+.story-description h3,
+.work-description h3 {
+   font-size: 2.25rem;
+   padding-bottom: 30px;
+}
+
+.story-description p,
+.work-description p {
+   padding: 20px 0;
+   font-size: 1.25rem;
+   color: #4d4d4d;
+}
+
+.work-gallery {
+   display: grid;
+   grid-template-columns: repeat(3, 200px);
+}
+
+.work-gallery img {
+   width: 100%;
+}
+
+@media (max-width: 1024px) {
+   /* Index Page */
+   .page {
+      grid-template-columns: 5% 1fr 5%;
+      grid-template-rows: 2fr 1fr;
+      align-items: center;
+   }
+
+   .hero {
+      grid-column: 2/3;
+      height: auto;
+   }
+
+   .details {
+      grid-row: 2/3;
+      grid-column: 2/3;
+   }
+   .details h1 {
+      font-size: 3rem;
+   }
+   .details h2 {
+      font-size: 2rem;
+   }
+
+   /* Description Page */
+   .story,
+   .my-work {
+      flex-direction: column;
+   }
+
+   .story-description,
+   .work-description {
+      width: 100%;
+   }
+
+   .profile {
+      padding-top: 30px;
+      text-align: center;
+   }
+
+   .work-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+   }
+}
+
+@media (max-width: 768px) {
+   .hero img {
+      height: 400px;
+   }
+   .details h1 {
+      font-size: 2.375rem;
+   }
+   .details h2 {
+      font-size: 1.75rem;
+   }
+}
+
+/* Nav
+========= */
+.nav-open {
+   position: absolute;
+   top: 0;
+   left: 0;
+   background: white;
+   width: 100%;
+   height: 50vh;
+   z-index: 1;
+   color: black;
+   display: grid;
+   grid-template-columns: 5% 1fr 1fr 5%;
+   justify-items: center;
+   align-items: center;
+   text-align: center;
+   transform: translateY(-100%);
+}
+
+.contact {
+   grid-column: 2 / 3;
+}
+.nav-open h3 {
+   font-size: 1.75rem;
+   padding-bottom: 40px;
+}
+.nav-open p {
+   font-size: 1.125rem;
+}
+.social-links img {
+   padding: 0 20px;
+   cursor: pointer;
+}
+
+.logo,
+.menu {
+   z-index: 2;
+}
+
+.menu {
+   cursor: pointer;
+}
